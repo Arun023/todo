@@ -5,27 +5,16 @@ function App() {
   const [input, setInput] = useState("");
   const [todoList, setTodoList] = useState([]);
 
-  const addConsistent = () => {
-    localStorage.setItem("List", JSON.stringify(todoList));
-  };
-  const todo = JSON.parse(localStorage.getItem("List"));
-
   const handleClick = () => {
     setTodoList((prev) => [...prev, input]);
     setInput("");
-    addConsistent();
   };
 
-  useEffect(() => {
-    localStorage.setItem("List" , JSON.stringify(todoList))
-      setTodoList(todo);
-  }, []);
   const addchecked = (event) => {
     event.currentTarget.classList.toggle("checked");
   };
 
   console.log(todoList);
-  console.log(todo);
   return (
     <div className="App">
       <div id="myDIV" className="header">
@@ -43,14 +32,8 @@ function App() {
       </div>
       {todoList?.map((id) => {
         return (
-          <ul id="myUL" key={id}>
-            <li
-              onClick={(event) => addchecked(event)}
-              // className={`${active ? "checked" : ""}`}
-            >
-              {id}
-            </li>
-            {/* <li className="checked">Pay bills</li> */}
+          <ul id="myUL" key={id} style={{display:"flex"}}>
+            <li onClick={(event) => addchecked(event)}>{id}</li><div>❌</div>
           </ul>
         );
       })}

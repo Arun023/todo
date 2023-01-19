@@ -1,32 +1,25 @@
-body {
-  margin: 0;
-  /* min-width: 250px; */
-}
 
-/* Include the padding and border in an element's total width and height */
 * {
   box-sizing: border-box;
-  width: 100%;
-  padding: 0 80px;
+  /* padding: 0 80px; */
   margin: auto;
 }
 .App{
-  width: 100%;
+  max-width: 100%;
+  min-width: 90%;
 }
 
-/* Remove margins and padding from the list */
 ul {
   margin: 0;
   padding: 0;
 }
 
-/* Style the list items */
 ul li {
   cursor: pointer;
   position: relative;
   padding: 12px 8px 12px 40px;
   list-style-type: none;
-  background: #eee;
+  background: #000;
   font-size: 18px;
   transition: 0.2s;
   
@@ -38,14 +31,12 @@ ul li {
 }
 
 /* Set all odd list items to a different color (zebra-stripes) */
-ul li:nth-child(odd) {
-  background: #f9f9f9;
+ul li {
+  background: #000009;
+  color: white;
 }
 
 /* Darker background-color on hover */
-ul li:hover {
-  background: #ddd;
-}
 
 /* When clicked on, add a background color and strike out text */
 ul li.checked {
@@ -84,7 +75,7 @@ ul li.checked::before {
 /* Style the header */
 .header {
   background-color: #f44336;
-  padding: 30px 40px;
+  padding: 20px 20px;
   color: white;
   text-align: center;
 }
@@ -123,4 +114,14 @@ input {
 
 .addBtn:hover {
   background-color: #bbb;
+}
+@media (prefers-color-scheme: dark) {
+  body {
+    color: black;
+    background: #fff;
+  }
+
+  body a {
+    color: #809fff;
+  }
 }
